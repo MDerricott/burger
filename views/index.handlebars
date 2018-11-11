@@ -1,10 +1,11 @@
-<h1>Burgers</h1>
-
+<h1>Burgers</h1> 
 Not devoured
 <ul>
 {{#each burger}}
    {{#unless devoured}}
-       <li>{{burger_name}}</li> 
+       <li>{{burger_name}}
+         <button class="change-devour" data-id="{{id}}" name="devoured" data-devoured="true"> </button>
+	</li> 
     {{/unless}}
 {{/each}}
 </ul>
@@ -20,19 +21,14 @@ Devoured
 
 
 
-{{!-- <h2>Add a Cat</h2>
-<form class="create-form">
+<h2>Add a Burger</h2>
+<form class="create-form" method="POST" action="/api/burgers">
 
   <div class="form-group">
-    <label for="ca">Cat Name:</label>
-    <input type="text" id="ca" name="name">
+    <label for="burgerName">Burger Name:</label>
+    <input type="text" id="burgerName" name="name">
   </div>
 
-  <div class="form-group">
-    <label for="sleepy">Sleepy?</label><br>
-    <input type="radio" name="sleepy" value="1" checked> Sleepy!<br>
-    <input type="radio" name="sleepy" value="0"> Awake
-  </div>
-
-  <button type="submit">Add Cat</button>
-</form> --}}
+ <button type="submit">Add Burger</button>
+ 
+</form>

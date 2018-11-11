@@ -1,4 +1,5 @@
 var express = require("express");
+var reload = require('reload');
 
 var PORT = process.env.PORT || 8080;
 
@@ -19,7 +20,7 @@ app.set("view engine", "handlebars");
 
 var routes = require("./controllers/burger_controller");
 app.use(routes);
-
+reload(app);
 app.listen(PORT,function(){
 console.log("Server listening on http://localhost:" + PORT);
 });
